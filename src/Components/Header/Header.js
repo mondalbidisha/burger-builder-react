@@ -24,7 +24,7 @@ const Header = (props) => {
                   active={nav === 'Burger Builder'}
                   >
                   {nav}
-                </Menu.Item>
+                </Menu.Item>  
               )
             })}
           </Menu>
