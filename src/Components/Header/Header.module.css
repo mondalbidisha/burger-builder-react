@@ -1,0 +1,36 @@
+.paginationMenu {
+  margin: 0 !important;
+  font-size: 1.3rem !important;
+  display: inline-flex !important;
+  vertical-align: middle !important;
+  margin-right: -55px !important;
+}
+
+.menuColumn {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.segmentHeader {
+  background-color: #703B09 !important;
+  color: antiquewhite !important;
+}
+
+.menuItem {
+  background-color: #703B09 !important;
+  color: antiquewhite !important;
+}
+
+.menuItem:hover {
+  color: antiquewhite !important;
+  background-color: #8F5C2C !important;
+  border: 4px solid #40A4C8 !important;
+  cursor: pointer !important;;
+}
+
+.activeMenuItem {
+  color: antiquewhite !important;
+  background-color: #8F5C2C !important;
+  border: 4px solid #40A4C8 !important;
+  cursor: pointer !important;;
+}
