@@ -6,7 +6,7 @@ const BurgerBuildControl = (props) => (
     <List.Item>
       <Grid columns={2} verticalAlign='middle'>
         <Grid.Column width={3}>
-          <img src={props.imageUrl} alt="bacon" className={classes.ItemImageRef} />
+          <img src={`images/${props.imageUrl}`} alt={props.type} className={classes.ItemImageRef} />
         </Grid.Column>
         <Grid.Column width={5}>
           <List.Content>
@@ -17,18 +17,18 @@ const BurgerBuildControl = (props) => (
         </Grid.Column>
         <Grid.Column width={2}>
           <Button icon color='red'
-           onClick={props.removed}
+           onClick={props.removeItem}
            disabled={props.disabled}
           >
             <Icon name='minus' />
           </Button>
         </Grid.Column>
         <Grid.Column width={2}>
-          <span className={classes.ItemLabelInfo}>0</span>
+          <span className={classes.ItemLabelInfo}>{props.qty}</span>
         </Grid.Column>
         <Grid.Column width={2}>
           <Button icon color='green'
-           onClick={props.removed}
+           onClick={props.addItem}
            disabled={props.disabled} 
           >
             <Icon name='add' />
