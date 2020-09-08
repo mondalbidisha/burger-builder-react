@@ -8,6 +8,11 @@
   justify-content: center;
 }
 
+.BurgerComponent {
+  height: 700px;
+  overflow-y: auto;
+}
+
 .BurgerSegment {
   padding: 0px !important;
   margin: 0px !important;

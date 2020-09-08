@@ -81,10 +81,18 @@
 }
 
 
-.Meat {
+.Chicken {
   width: 80%;
   height: 8%;
-  background: linear-gradient(#7f3608, #702e05);
+  background: linear-gradient(#7f3608, #4e2105);
+  margin: 2% auto;
+  border-radius: 15px;
+}
+
+.Lamb {
+  width: 80%;
+  height: 5%;
+  background: linear-gradient(#7f3608, #d8737df5);
   margin: 2% auto;
   border-radius: 15px;
 }
@@ -105,9 +113,46 @@
   border-radius: 20px;
 }
 
+.Lettuce {
+  width: 85%;
+  height: 4%;
+  margin: 2% auto;
+  background: linear-gradient(#052f03, #407507);
+  border-radius: 20px;
+}
+
+.Ketchup {
+  width: 75%;
+  height: 5%;
+  margin: 2% auto;
+  background: linear-gradient(#e60606, #5c040c);
+  border-radius: 20px;
+}
+
 .Bacon {
   width: 80%;
   height: 3%;
   background: linear-gradient(#bf3813, #c45e38);
+  margin: 2% auto;
+}
+
+.Onion {
+  width: 83%;
+  height: 5%;
+  background: linear-gradient(#5e0944, #f09eb8);
+  margin: 2% auto;
+}
+
+.Mayonnaise {
+  width: 85%;
+  height: 5%;
+  background: linear-gradient(#eebd0afa, #ddde9f);
+  margin: 2% auto;
+}
+
+.Jalapeno {
+  width: 85%;
+  height: 5%;
+  background: linear-gradient(#032502fa, #595a04);
   margin: 2% auto;
 }

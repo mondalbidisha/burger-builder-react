@@ -11,7 +11,7 @@ class BurgerBuiler extends Component {
     super(props);
     this.state = {
       totalPrice: 4,
-      purchasable: false,
+      purchasable: true,
       purchasing: false,
       IngredientList: [
         { label: 'Bacon',      type: 'bacon',      image: 'bacon.jpg',     price: 1.4, qty: 0 },
@@ -28,6 +28,23 @@ class BurgerBuiler extends Component {
     }
     this.addIngredientHandler = this.addIngredientHandler.bind(this);
     this.removeIngredientHandler = this.removeIngredientHandler.bind(this);
+    this.updatePurchasableState = this.updatePurchasableState.bind(this); 
+  }
+
+  updatePurchasableState() {
+    let sum = 0;
+    this.state.IngredientList.forEach((item) => {
+      sum = sum + item.qty
+    });
+    if(sum > 0) {
+      this.setState({
+        purchasable: false
+      })
+    } else {
+      this.setState({
+        purchasable: true
+      })
+    }
   }
 
   addIngredientHandler(ingredient) {
@@ -46,6 +63,7 @@ class BurgerBuiler extends Component {
       totalPrice: updatePrice, 
       IngredientList: updatedIngredients
     }); 
+    this.updatePurchasableState();
   }
 
   removeIngredientHandler(ingredient) {
@@ -64,6 +82,7 @@ class BurgerBuiler extends Component {
       totalPrice: updatePrice, 
       IngredientList: updatedIngredients
     });
+    this.updatePurchasableState();
   }
 
   render() {
@@ -71,12 +90,13 @@ class BurgerBuiler extends Component {
       <Aux>
         <Segment raised className={classes.BurgerSegment}>
           <Grid columns={2} verticalAlign='middle' className={classes.BurgerGrid}>
-            <Grid.Column width={9} verticalAlign='middle'>
-              <Burger/>
+            <Grid.Column width={9} verticalAlign='middle' className={classes.BurgerComponent}>
+              <Burger ingredients={this.state.IngredientList}/>
             </Grid.Column>
             <Grid.Column width={7}>
               <BurgerBuildControls
                totalPrice={this.state.totalPrice}
+               purchasable={this.state.purchasable}
                IngredientList={this.state.IngredientList}
                ingredientAdded={this.addIngredientHandler}
                ingredientRemoved={this.removeIngredientHandler}

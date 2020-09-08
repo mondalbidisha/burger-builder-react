@@ -18,7 +18,7 @@ const BurgerBuildControl = (props) => (
         <Grid.Column width={2}>
           <Button icon color='red'
            onClick={props.removeItem}
-           disabled={props.disabled}
+           disabled={!(props.qty)}
           >
             <Icon name='minus' />
           </Button>
@@ -29,7 +29,6 @@ const BurgerBuildControl = (props) => (
         <Grid.Column width={2}>
           <Button icon color='green'
            onClick={props.addItem}
-           disabled={props.disabled} 
           >
             <Icon name='add' />
           </Button>

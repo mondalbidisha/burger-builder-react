@@ -32,7 +32,7 @@ const BurgerBuildControls = (props) => {
             <h2>TOTAL PRICE - $ {props.totalPrice.toFixed(2)}</h2>
           </Grid.Column>
           <Grid.Column width={8}>
-            <Button className={classes.OrderButton}>Order Now</Button>
+            <Button className={classes.OrderButton} disabled={props.purchasable}>Order Now</Button>
           </Grid.Column>
         </Grid>
       </Segment>
