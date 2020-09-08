@@ -4,14 +4,18 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  /* box-shadow: 0 2px 1px #ccc; */
   margin: auto;
   padding: 10px 0;
 }
 
-.imageStyling {
+.ItemImageRef {
   height: 40px !important;
   width: 80px !important;
+}
+
+.ItemLabelInfo {
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .OrderButton {

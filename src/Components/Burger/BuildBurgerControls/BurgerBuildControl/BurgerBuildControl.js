@@ -5,13 +5,13 @@ import classes from './../BurgerBuildControl/BurgerBuildControl.module.css';
 const BurgerBuildControl = (props) => (
     <List.Item>
       <Grid columns={2} verticalAlign='middle'>
-        <Grid.Column width={2}>
-          <img src={props.imageUrl} alt="bacon" className={classes.imageStyling} />
+        <Grid.Column width={3}>
+          <img src={props.imageUrl} alt="bacon" className={classes.ItemImageRef} />
         </Grid.Column>
-        <Grid.Column width={6}>
+        <Grid.Column width={5}>
           <List.Content>
             <List.Header>
-              <h3>{props.itemName}</h3>
+              <span className={classes.ItemLabelInfo}>{props.itemName}</span>
             </List.Header>
           </List.Content>
         </Grid.Column>
@@ -24,7 +24,7 @@ const BurgerBuildControl = (props) => (
           </Button>
         </Grid.Column>
         <Grid.Column width={2}>
-          0
+          <span className={classes.ItemLabelInfo}>0</span>
         </Grid.Column>
         <Grid.Column width={2}>
           <Button icon color='green'
@@ -33,6 +33,9 @@ const BurgerBuildControl = (props) => (
           >
             <Icon name='add' />
           </Button>
+        </Grid.Column>
+        <Grid.Column width={2}>
+          <span className={classes.ItemLabelInfo}>$ {props.price}</span>
         </Grid.Column>
       </Grid>
     </List.Item>

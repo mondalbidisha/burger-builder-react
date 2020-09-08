@@ -9,9 +9,36 @@
   padding: 10px 0 !important;
 }
 
+.OrderButtonSegment {
+  width: 100%;
+  border-left: 0px !important;
+  border-right: 0px !important;
+  border-bottom: 0px !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  background-color: #dec272fa !important;
+  border-top: 2px solid #a47f15fa !important;
+}
+
+.ListTitleSegment {
+  width: 100%;
+  text-transform: uppercase !important;
+  font-weight: 600;
+  font-size: 24px !important;
+  border-left: 0px !important;
+  border-right: 0px !important;
+  border-top: 0px !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  background-color: #dec272fa !important;
+  border-bottom: 2px solid #a47f15fa !important;
+}
+
 .ControlsSegment {
 	width: 100% !important;
-	background-color: #dec272fa !important;
+  background-color: #dec272fa !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 	border: none !important;
 	border-radius: 0px !important;
 	box-shadow: none !important;

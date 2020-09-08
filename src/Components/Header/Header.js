@@ -14,7 +14,7 @@ const Header = (props) => {
           <h2>{props.title}</h2>
         </Grid.Column>
         <Grid.Column floated='right' width={3} className={classes.menuColumn}>
-          <Menu pagination className={classes.paginationMenu}>
+          {/* <Menu pagination className={classes.paginationMenu}>
             {props.navItems.map((nav, index) => {
               return (
                 <Menu.Item
@@ -27,7 +27,7 @@ const Header = (props) => {
                 </Menu.Item>  
               )
             })}
-          </Menu>
+          </Menu> */}
         </Grid.Column>
       </Grid>
     </Segment>
