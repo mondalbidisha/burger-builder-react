@@ -1,12 +1,12 @@
 import React from 'react';
-import { Image, List, Grid, Icon, Button } from 'semantic-ui-react';
-// import classes from './BuildControl.css';
+import { List, Grid, Icon, Button } from 'semantic-ui-react';
+import classes from './../BurgerBuildControl/BurgerBuildControl.module.css';
 
 const BurgerBuildControl = (props) => (
     <List.Item>
       <Grid columns={2} verticalAlign='middle'>
         <Grid.Column width={2}>
-          <Image avatar src='/images/avatar/small/daniel.jpg' />
+          <img src={props.imageUrl} alt="bacon" className={classes.imageStyling} />
         </Grid.Column>
         <Grid.Column width={6}>
           <List.Content>
@@ -36,16 +36,6 @@ const BurgerBuildControl = (props) => (
         </Grid.Column>
       </Grid>
     </List.Item>
-    // <div className={classes.BuildControl}>
-    //   <div className={classes.Label}>{props.label}</div>
-    //   <button 
-    //       className={classes.Less} 
-    //       onClick={props.removed} 
-    //       disabled={props.disabled}>Less</button>
-    //   <button 
-    //       className={classes.More} 
-    //       onClick={props.added}>More</button>
-    // </div>
 );
 
 export default BurgerBuildControl;

@@ -1,5 +1,5 @@
 .BuildControls {
-  width: 700px !important;
+  width: 100% !important;
   background-color: #dec272fa !important;
   display: flex !important;
   flex-flow: column !important;
@@ -15,8 +15,6 @@
 	border: none !important;
 	border-radius: 0px !important;
 	box-shadow: none !important;
-	max-height: 300px !important;
-	overflow-y: auto !important;
 }
 
 .OrderButton {
@@ -50,12 +48,14 @@
 
 @keyframes enable {
   0% {
-      transform: scale(1);
+    transform: scale(1);
   }
+
   60% {
-      transform: scale(1.1);
+    transform: scale(1.1);
   }
+
   100% {
-      transform: scale(1);
+    transform: scale(1);
   }
 }
