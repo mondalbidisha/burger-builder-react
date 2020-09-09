@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Burger.module.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
-import { Grid, GridColumn } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 
 const burger = (props) => {
   let transformedIngredients = [];

@@ -1,0 +1,14 @@
+.ItemImageRef {
+  height: 40px !important;
+  width: 80px !important;
+}
+
+.ItemLabelInfo {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ItemSegment {
+  max-height: 450px !important;
+  overflow-y: auto;
+}

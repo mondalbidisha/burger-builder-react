@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Aux from './../HOC/Aux';
+import AlertBox from './../Components/AlertBox/AlertBox';
 import classes from './BurgerBuilder.module.css';
 import BurgerBuildControls from './../Components/Burger/BuildBurgerControls/BurgerBuildControls';
 import Burger from './../Components/Burger/Burger';
@@ -13,6 +14,8 @@ class BurgerBuiler extends Component {
       totalPrice: 4,
       purchasable: true,
       purchasing: false,
+      checkoutItems: [],
+      openModal: false,
       IngredientList: [
         { label: 'Bacon',      type: 'bacon',      image: 'bacon.jpg',     price: 1.4, qty: 0 },
         { label: 'Cheese',     type: 'cheese',     image: 'cheese.jpg',    price: 0.6, qty: 0 },
@@ -28,7 +31,9 @@ class BurgerBuiler extends Component {
     }
     this.addIngredientHandler = this.addIngredientHandler.bind(this);
     this.removeIngredientHandler = this.removeIngredientHandler.bind(this);
-    this.updatePurchasableState = this.updatePurchasableState.bind(this); 
+    this.updatePurchasableState = this.updatePurchasableState.bind(this);
+    this.prepareCheckout = this.prepareCheckout.bind(this);
+    this.toggleModalHandler = this.toggleModalHandler.bind(this);
   }
 
   updatePurchasableState() {
@@ -85,18 +90,46 @@ class BurgerBuiler extends Component {
     this.updatePurchasableState();
   }
 
+  prepareCheckout() {
+    const ingredients = this.state.IngredientList;
+    const addedIngredients = ingredients.filter((item) => {
+      if(item.qty > 0) {
+        return item;
+      }
+    });
+    this.setState({
+      checkoutItems: addedIngredients,
+      openModal: true,
+    }) 
+  }
+
+  toggleModalHandler(property) {
+    this.setState({
+      openModal: property,
+    }) 
+  }
+
   render() {
     return (
       <Aux>
+        <AlertBox
+         totalPrice={this.state.totalPrice}
+         checkoutItems={this.state.checkoutItems}
+         openModal={this.state.openModal}
+         toggleModal={this.toggleModalHandler}
+        />
         <Segment raised className={classes.BurgerSegment}>
           <Grid columns={2} verticalAlign='middle' className={classes.BurgerGrid}>
             <Grid.Column width={9} verticalAlign='middle' className={classes.BurgerComponent}>
-              <Burger ingredients={this.state.IngredientList}/>
+              <Burger 
+               ingredients={this.state.IngredientList}
+              />
             </Grid.Column>
             <Grid.Column width={7}>
               <BurgerBuildControls
                totalPrice={this.state.totalPrice}
                purchasable={this.state.purchasable}
+               prepareCheckout={this.prepareCheckout}
                IngredientList={this.state.IngredientList}
                ingredientAdded={this.addIngredientHandler}
                ingredientRemoved={this.removeIngredientHandler}

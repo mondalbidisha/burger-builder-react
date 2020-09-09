@@ -4,8 +4,8 @@ import classes from './../BurgerBuildControl/BurgerBuildControl.module.css';
 
 const BurgerBuildControl = (props) => (
     <List.Item>
-      <Grid columns={2} verticalAlign='middle'>
-        <Grid.Column width={3}>
+      <Grid verticalAlign='middle'>
+        <Grid.Column width={2}>
           <img src={`images/${props.imageUrl}`} alt={props.type} className={classes.ItemImageRef} />
         </Grid.Column>
         <Grid.Column width={5}>
@@ -33,7 +33,7 @@ const BurgerBuildControl = (props) => (
             <Icon name='add' />
           </Button>
         </Grid.Column>
-        <Grid.Column width={2}>
+        <Grid.Column width={3}>
           <span className={classes.ItemLabelInfo}>$ {props.price}</span>
         </Grid.Column>
       </Grid>
